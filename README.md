@@ -1,10 +1,10 @@
-# 🚀 B2B SaaS User Onboarding Wizard
+# B2B SaaS User Onboarding Wizard
 
 A sleek, modern, and interactive 3-step user onboarding wizard built for a fictional B2B SaaS platform. Developed as part of a high-paced technical assessment using **Next.js**, **React**, and **Tailwind CSS**.
 
 ---
 
-## ✨ Features & Functionality
+## Features & Functionality
 
 ### 1. 3-Step Onboarding Flow
 * **Step 1: Company Profile**
@@ -26,26 +26,13 @@ A sleek, modern, and interactive 3-step user onboarding wizard built for a ficti
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Framework:** [Next.js](https://nextjs.org) (App Router)
 * **UI Library & Styling:** React, Tailwind CSS
 * **State Management:** React Hooks (`useState`, custom context)
-* **AI Integration:** LLM API integration for natural language form parsing
+* **AI Integration:** LLM API integration gemini-3.5-flash-lite
 
 ---
 
-## 🏁 Getting Started Locally
 
-To run this project locally on your machine, follow these steps:
-
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed on your system.
-
-### Installation & Setup
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-   cd your-repo-name
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
