@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.84",
+    "@google/genai": "^2.27.0",
     "ai": "^7.0.128",
     "next": "16.3.8",
     "openai": "^7.28.0",

@@ -5,13 +5,13 @@ import StepOne from './step-one';
 import StepTwo from './step-two';
 import StepThree from './step-three';
 import StepSuccess from './step-success';
-import { processOnboardingWithAI, saveFinalOnboarding } from '../../actions';
+import { processOnboardingWithAI } from '../../actions';
 
 export default function OnboardingForm() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   
-  // 💡 One central state tracker handles dynamic updates across all steps
+  //object to hold all form data across steps
   const [formMemory, setFormMemory] = useState({
     companyName: '',
     industry: '',
@@ -20,10 +20,11 @@ export default function OnboardingForm() {
     workEmail: '',
     password: '',
     aiPrompt: '',
-    aiSummary: ''
+    aiSummary: '',
+    aiGenerated: false 
   });
 
-  // Automatically captures layout keypress updates to keep state synchronised
+  // calls setformmemory function to update field from each steps 
   const handleInputChange = (fieldName, value) => {
     setFormMemory(prev => ({ ...prev, [fieldName]: value }));
   };
@@ -31,7 +32,6 @@ export default function OnboardingForm() {
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
 
-  // 🤖 Triggered on Step 3: Calls the backend AI extractor without submitting the final form
   const handleAIConsultation = async () => {
     setLoading(true);
     const result = await processOnboardingWithAI(
@@ -44,30 +44,35 @@ export default function OnboardingForm() {
     );
 
     if (result.success) {
-      // Update form data state values using the AI's response data
       setFormMemory(prev => ({
         ...prev,
         companyName: result.data.companyName,
         industry: result.data.industry,
         companySize: result.data.companySize,
-        aiSummary: result.data.aiSummary
+        aiSummary: result.data.aiSummary,
+        aiGenerated: true 
       }));
-      alert("AI Processing complete! Form fields updated successfully.");
     } else {
       alert(`AI Extraction issue: ${result.error}`);
     }
     setLoading(false);
   };
 
-  // Final submit handler saves all unified data into the database
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const result = await saveFinalOnboarding(formMemory);
-    if (result.success) {
-      setStep(4);
+    try {
+    //   const result = await saveFinalOnboarding(formMemory);
+    //   if (result.success) {
+        setStep(4); // Advance to the success card leaf screen layout frame
+    //   } else {
+    //     alert(result.error);
+    //   }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -92,12 +97,12 @@ export default function OnboardingForm() {
             values={formMemory} 
             onChange={handleInputChange} 
             onBack={prevStep} 
-            onAI={handleAIConsultation} // Pass the AI handler down
+            onAI={handleAIConsultation} 
             isPending={loading} 
           />
         </div>
-
-        {step === 4 && <StepSuccess data={formMemory} />}
+        {/* strict checking therefore 3 equal to '4' == 4 data type comparison happens as well */}
+        {step === 4 && <StepSuccess data={formMemory} />} 
       </div>
     </form>
   );
