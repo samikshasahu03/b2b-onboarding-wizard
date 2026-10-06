@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 B2B SaaS User Onboarding Wizard
 
-## Getting Started
+A sleek, modern, and interactive 3-step user onboarding wizard built for a fictional B2B SaaS platform. Developed as part of a high-paced technical assessment using **Next.js**, **React**, and **Tailwind CSS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features & Functionality
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. 3-Step Onboarding Flow
+* **Step 1: Company Profile**
+  * Company Name input field.
+  * Industry selection via a customized dropdown.
+  * Company Size selection via a structured dropdown.
+* **Step 2: Admin User Setup**
+  * Full Name, Work Email, and secure Password fields.
+* **Step 3: Customization & Goals**
+  * A dedicated text area titled *"Tell us what you want to achieve with our platform"*.
+  * **"Auto-Fill with AI" Feature:** An intelligent button that parses unstructured text input using an LLM API to automatically populate or overwrite fields in Steps 1 and 2 (e.g., parsing *"I run a 50-person marketing agency called Zoomers"* into Company Name, Size, and Industry categories).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 2. Robust State Management & Navigation
+* Seamless **"Next"** and **"Back"** navigation controls that preserve user input across steps without data loss using clean React state patterns (`useState` / Context API).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Client-Side Validation
+* Strict validation rules implemented per step (e.g., standard email regex formatting, minimum password length rules).
+* Guardrails preventing users from advancing to subsequent steps until all current required fields pass validation checks.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Framework:** [Next.js](https://nextjs.org) (App Router)
+* **UI Library & Styling:** React, Tailwind CSS
+* **State Management:** React Hooks (`useState`, custom context)
+* **AI Integration:** LLM API integration for natural language form parsing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏁 Getting Started Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run this project locally on your machine, follow these steps:
 
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your system.
+
+### Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+   cd your-repo-name
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
