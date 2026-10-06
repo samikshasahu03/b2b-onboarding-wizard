@@ -75,9 +75,6 @@ export default function OnboardingWizard() {
         }
       `}</style>
 
-      {/* ==========================================
-          ANIMATED BACKGROUND
-          ========================================== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft purple vignette on pure black */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(76,29,149,0.18),transparent_70%)]" />
@@ -93,7 +90,6 @@ export default function OnboardingWizard() {
             WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 75%)',
           }}
         />
-
         {/* Drifting glowing orbs */}
         <div className="absolute top-[5%] left-[8%] w-72 h-72 rounded-full bg-purple-600/30 blur-3xl animate-drift-a" />
         <div className="absolute bottom-[8%] right-[8%] w-80 h-80 rounded-full bg-violet-700/30 blur-3xl animate-drift-b" />
@@ -138,11 +134,9 @@ export default function OnboardingWizard() {
         ))}
       </div>
 
-      {/* ==========================================
-          MAIN CARD CONTAINER
-          ========================================== */}
+      {/* Main content container div */}
       <div className="w-full max-w-5xl bg-slate-950/70 backdrop-blur-2xl rounded-2xl shadow-2xl shadow-purple-950/40 border border-purple-500/10 overflow-hidden grid grid-cols-1 md:grid-cols-12 relative z-10">
-        {/* LEFT COLUMN: Sidebar */}
+        {/* left column info sidebar */}
         <div className="md:col-span-5 bg-gradient-to-br from-violet-900 via-indigo-900 to-purple-950 p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
           <div className="absolute -top-24 -left-24 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
           <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-indigo-500/30 rounded-full blur-3xl pointer-events-none"></div>
@@ -170,7 +164,7 @@ export default function OnboardingWizard() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Form Container Placeholder */}
+        {/* left column - form container placeholder */}
         <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-between bg-slate-900/50">
           <div>
             <p className="text-xs text-purple-400 uppercase tracking-wider font-semibold">
