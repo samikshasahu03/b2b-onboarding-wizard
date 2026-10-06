@@ -19,7 +19,7 @@ export default function OnboardingPage() {
               B2B Onboarding Wizard
             </span>
             <h2 className="text-3xl font-extrabold text-white mt-6 tracking-tight">
-              NexusScale
+              VeloFlow
             </h2>
           </div>
 
@@ -28,7 +28,7 @@ export default function OnboardingPage() {
               Tell us about your organization
             </h3>
             <p className="text-sm text-purple-200/80 leading-relaxed">
-              Help us personalize your environment. Knowing your industry and team size helps us optimize your workflow recommendations and resource limits right out of the box—it only takes a few seconds.
+              Help us personalize your environment. Knowing your industry and team size helps us optimize your workflow recommendations and resource limits right out of the box.
             </p>
           </div>
 

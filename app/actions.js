@@ -2,8 +2,6 @@
 
 import { GoogleGenAI, Type } from '@google/genai';
 
-// Initialize client explicitly. If process.env.GEMINI_API_KEY is not reading, 
-// fallback ensures local variables evaluate correctly.
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
@@ -14,7 +12,6 @@ export async function processOnboardingWithAI(currentData, rawPrompt) {
       return { success: false, data: currentData, error: "Prompt is completely blank." };
     }
 
-    // Fix: Simplify the content array to string format inputs to prevent SDK arg errors
     const response = await ai.models.generateContent({
       model: 'gemini-3.5-flash-lite',
       contents: `Current state configuration: ${JSON.stringify(currentData)}\nUser dynamic prompt request: "${rawPrompt}"`,
@@ -46,7 +43,7 @@ export async function processOnboardingWithAI(currentData, rawPrompt) {
 
     return {
       success: true,
-      data: parsedUpdates, // Automatically populates step-one input state!
+      data: parsedUpdates,
       error: null
     };
 

@@ -4,25 +4,25 @@ export default function StepThree({ values, onChange, onBack, onAI, isPending })
   return (
     <div className="step-box">
       <h1 className="text-xl font-bold text-white mt-1 mb-1">
-        {values.aiGenerated ? 'AI Generation Done' : 'AI Setup Prompt (Optional)'}
+        Customization & Goals
       </h1>
       <p className="text-xs text-slate-400 mb-6">
         {values.aiGenerated 
           ? 'Your layout values have been updated. Finalise workspace parameter builds underneath.' 
-          : 'Describe your operational target goals or skip to complete setup.'}
+          : 'Help us tailor your experience. Tell us a bit about your company or what you are looking to accomplish.'}
       </p>
 
       <div className="space-y-4">
         <div>
-          <label htmlFor="aiPrompt" className={labelClass}>Workspace Intent Description</label>
+          <label htmlFor="aiPrompt" className={labelClass}>Tell us what you want to achieve with our platform</label>
           <textarea 
             id="aiPrompt" 
             name="aiPrompt" 
-            rows={5} 
+            rows={7} 
             value={values.aiPrompt} 
             onChange={(e) => onChange('aiPrompt', e.target.value)}
             readOnly={values.aiGenerated || isPending} // either of the is false then you can edit 
-            placeholder="Describe your setup layout to extract matching options (Optional)..." 
+            placeholder="I run a 50-person marketing agency called Zoomers, and we are looking for a platform to streamline client outreach campaigns." 
             className={`${inputClass} resize-none ${values.aiGenerated ? 'opacity-50 cursor-not-allowed bg-slate-950/40' : ''}`} 
           />
         </div>
@@ -34,13 +34,13 @@ export default function StepThree({ values, onChange, onBack, onAI, isPending })
           type="button" 
           onClick={onAI} 
           disabled={isPending || !values.aiPrompt.trim() || values.aiGenerated}
-          className="w-full bg-slate-950 border border-purple-500/30 text-purple-400 hover:bg-slate-900 font-medium py-2 rounded-lg text-xs transition-colors disabled:opacity-40 disabled:pointer-events-none"
+          className="w-full bg-slate-950 border border-purple-500/30 text-purple-400 hover:bg-slate-900 font-medium py-2 rounded-lg text-sm transition-colors disabled:opacity-40 disabled:pointer-events-none"
         >
           {isPending 
-            ? 'Consulting Core AI LLM...' 
+            ? 'Consulting AI LLM...' 
             : values.aiGenerated 
               ? ' AI Generation Done' 
-              : ' Ask AI to Extract Form Fields'}
+              : 'Autofill with AI'}
         </button>
 
         <div className="flex gap-4 w-full">

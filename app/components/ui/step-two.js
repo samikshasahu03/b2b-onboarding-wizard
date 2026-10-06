@@ -19,7 +19,7 @@ export default function StepTwo({ values, onChange, onNext, onBack }) {
   return (
     <div className="step-box">
       <h1 className="text-xl font-bold text-white mt-1 mb-1">Admin Profile</h1>
-      <p className="text-xs text-slate-400 mb-6">Configure account credentials.</p>
+      <p className="text-xs text-slate-400 mb-6">Set up your primary administrator account to manage your workspace</p>
 
       <div className="space-y-4">
         <div>
@@ -61,7 +61,7 @@ export default function StepTwo({ values, onChange, onNext, onBack }) {
             required 
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" //regex for password validation
             title="Password must be at least 8 characters long, contain 1 uppercase letter, 1 number, and 1 special character."
-            placeholder="••••••••••••" 
+            placeholder="Password" 
             className={inputClass} 
           />
         </div>
