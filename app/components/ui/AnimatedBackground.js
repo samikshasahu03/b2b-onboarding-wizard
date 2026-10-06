@@ -44,19 +44,19 @@ export default function AnimatedBackground() {
       <div className="absolute top-[15%] right-[20%] w-44 h-44 rounded-full bg-indigo-600/20 blur-2xl animate-drift-a" />
 
       {/* Rotating outlined rings */}
-      <div className="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full border border-purple-500/20 animate-ring">
+      <div className="absolute -top-40 -right-40 .w-\[520px] .h-\[520px] rounded-full border border-purple-500/20 animate-ring">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-purple-400 shadow-[0_0_20px_6px_rgba(168,85,247,0.7)]" />
       </div>
-      <div className="absolute -bottom-52 -left-52 w-[640px] h-[640px] rounded-full border border-violet-500/15 animate-ring-rev">
+      <div className="absolute -bottom-52 -left-52 .w-\[640px] .h-\[640px] rounded-full border border-violet-500/15 animate-ring-rev">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 rounded-full bg-violet-400 shadow-[0_0_20px_6px_rgba(139,92,246,0.7)]" />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-dashed border-purple-800/20 animate-ring-rev" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 .w-\[760px] .h-\[760px] rounded-full border border-dashed border-purple-800/20 animate-ring-rev" />
 
       {/* Light streaks sweeping across */}
       {streaks.map((s, i) => (
         <div
           key={i}
-          className="absolute left-0 h-px bg-gradient-to-r from-transparent via-purple-400/70 to-transparent"
+          className="absolute left-0 h-px bg-linear-to-r from-transparent via-purple-400/70 to-transparent"
           style={{
             top: s.top,
             width: s.width,
